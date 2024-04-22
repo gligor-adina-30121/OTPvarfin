@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\otp1.props" />
+</Project>
