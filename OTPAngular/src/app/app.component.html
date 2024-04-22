@@ -1,0 +1,19 @@
+<div id="bt-background">BT</div>
+<div id="welcome-message" style="background-color: #ffffff; color: #ffd700; padding: 20px; text-align: center;"> Bine ați venit la Banca Transilvania!</div><br>
+
+<div style="text-align: center;">
+  <input type="email" placeholder="Email" [(ngModel)]="email" style="margin-bottom: 10px; padding: 5px; border: 1px solid #ccc;"><br>
+  <div *ngIf="!validateEmail()" style="color: red;">Adresa de email nu este validă</div><br> <!-- Mesaj de eroare pentru adresa de email -->
+  <input type="text" placeholder="Username" [(ngModel)]="username" style="margin-bottom: 10px; padding: 5px; border: 1px solid #ccc;"><br>
+  <input type="password" placeholder="Password" [(ngModel)]="passwd" style="margin-bottom: 10px; padding: 5px; border: 1px solid #ccc;"><br>
+  <!-- Campurile pentru judet si CNP -->
+  <input type="text" placeholder="Judet" [(ngModel)]="judet" style="margin-bottom: 10px; padding: 5px; border: 1px solid #ccc;"><br>
+  <input type="text" placeholder="CNP" [(ngModel)]="cnp" style="margin-bottom: 10px; padding: 5px; border: 1px solid #ccc;"><br>
+
+  <div *ngIf="suggestedPassword" class="toast-message">
+    Parola sugerată: {{ suggestedPassword }} 
+    <button (click)="useSuggestedPassword()" style="background-color: #ffd700; color: #fff; border: none; padding: 5px; cursor: pointer;">Folosește</button>
+  </div><br>
+  <button (click)="getSuggestedPassword()" style="background-color: #ffd700; color: #fff; border: none; padding: 10px 20px; cursor: pointer;">Obține parola sugerată</button><br><br>
+  <button (click)="resetFields()" style="background-color: #ffd700; color: #fff; border: none; padding: 10px 20px; cursor: pointer;">Creează contul</button>
+</div>
